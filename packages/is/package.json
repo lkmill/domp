@@ -37,7 +37,5 @@
     "eslint-plugin-import": "^2.2.0",
     "rimraf": "^2.6.1"
   },
-  "dependencies": {
-    "dom-select-many": "^0.1.0"
-  }
+  "dependencies": {}
 }

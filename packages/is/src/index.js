@@ -21,6 +21,11 @@ if (!Element.prototype.matches) {
     };
 }
 
+/**
+ * @param {Node} node - Node to test
+ * @param {string|number|Node|Node[]|NodeList|HTMLCollection} criteria - Criteria to test against
+ * @returns {boolean} - Whether Node passes criteria
+ */
 export default function is(node, criteria) {
   if (!criteria) {
     return false;
@@ -31,6 +36,9 @@ export default function is(node, criteria) {
   } else if (typeof criteria === 'number') {
     return node.nodeType === criteria;
   } else if (Array.isArray(criteria)) {
+    // TODO maybe call `is` recursively here so one can
+    // pass an array of selectors. or an array of
+    // different types ie `criteria.some((item) => is(node, item))`
     return criteria.indexOf(node) > -1;
   } else if (criteria.length) {
     return Array.from(criteria).indexOf(node) > -1;

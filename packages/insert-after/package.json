@@ -1,0 +1,40 @@
+{
+  "name": "dom-insert-after",
+  "version": "0.1.0",
+  "description": "DOM, HTML",
+  "main": "cjs/index.js",
+  "jsnext:main": "es/index.js",
+  "scripts": {
+    "clean": "rimraf *.js es lib dist",
+    "lint": "eslint src",
+    "build": "npm run build:cjs && npm run build:es",
+    "build:cjs": "BABEL_ENV=cjs babel src --out-dir cjs",
+    "build:es": "BABEL_ENV=es babel src --out-dir es",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run clean && npm run lint && npm run build",
+    "preversion": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lohfu/dom-insert-after.git"
+  },
+  "keywords": [
+    "DOM",
+    "HTML"
+  ],
+  "author": "Linus Miller <lohfu@lohfu.io> (https://lohfu.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lohfu/dom-insert-after/issues"
+  },
+  "homepage": "https://github.com/lohfu/dom-insert-after#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "rimraf": "^2.6.1"
+  }
+}

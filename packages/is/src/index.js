@@ -15,7 +15,17 @@ if (!Element.prototype.matches) {
 }
 
 export default function is(element, ufo) {
-  return (!ufo || typeof ufo === 'string' && element.matches && element.matches(ufo)) ||
-    ((ufo instanceof Node) && element === ufo) ||
-    (ufo.length && Array.from(ufo).indexOf(element) >= 0);
+  if (!(element instanceof Node) || !ufo) {
+    return false;
+  } else if (typeof ufo === 'string') {
+    return element.matches && element.matches(ufo);
+  } else if (ufo instanceof Node) {
+    return element === ufo;
+  } else if (Array.isArray(ufo)) {
+    return ufo.indexOf(element) > -1;
+  } else if (ufo.length) {
+    return Array.from(ufo).indexOf(element) > -1;
+  }
+
+  return false;
 }

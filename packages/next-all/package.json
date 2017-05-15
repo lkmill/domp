@@ -36,5 +36,8 @@
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.2.0",
     "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "dom-is": "^0.1.1"
   }
 }

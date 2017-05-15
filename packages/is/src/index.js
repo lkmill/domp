@@ -10,7 +10,13 @@ if (!Element.prototype.matches) {
     function (s) {
       const matches = (this.document || this.ownerDocument).querySelectorAll(s);
 
-      return matches.some((match) => match === this);
+      for (let i = 0; i < matches.length; i++) {
+        if (matches[i] === this) {
+          return true;
+        }
+      }
+
+      return false;
     };
 }
 

@@ -40,7 +40,7 @@ export default function is(node, criteria) {
     // pass an array of selectors. or an array of
     // different types ie `criteria.some((item) => is(node, item))`
     return criteria.indexOf(node) > -1;
-  } else if (criteria.length) {
+  } else if (criteria.length && typeof criteria !== 'function') {
     return Array.from(criteria).indexOf(node) > -1;
   }
 

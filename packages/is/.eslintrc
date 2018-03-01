@@ -3,5 +3,10 @@
 
   "rules": {
     "comma-dangle": [ 2, "always-multiline" ]
+  },
+
+  "globals": {
+    "Element": true,
+    "Node": true
   }
 }

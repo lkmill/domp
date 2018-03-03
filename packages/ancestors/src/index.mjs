@@ -1,21 +1,21 @@
-import is from '@domp/is';
+import is from '@domp/is'
 
-export default function ancestors(ref, ufo, stop = document.body) {
+export default function ancestors (ref, ufo, stop = document.body) {
   if (ufo instanceof NodeList || ufo instanceof HTMLCollection) {
-    ufo = Array.from(ufo);
+    ufo = Array.from(ufo)
   }
 
-  const result = [];
+  const result = []
 
-  let node = ref.parentNode;
+  let node = ref.parentNode
 
   while (node && !is(node, stop)) {
     if (!ufo || is(node, ufo)) {
-      return result.push(node);
+      return result.push(node)
     }
 
-    node = node.parentNode;
+    node = node.parentNode
   }
 
-  return result;
+  return result
 }

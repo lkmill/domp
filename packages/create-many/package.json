@@ -12,8 +12,8 @@
     "build:cjs": "BABEL_ENV=cjs babel src --out-dir cjs",
     "build:es": "BABEL_ENV=es babel src --keep-file-extension --out-dir es",
     "build:node": "BABEL_ENV=node babel src --out-dir node",
-    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -o dist/domp-is.js",
-    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c | uglifyjs -c -m > dist/domp-is.min.js",
+    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -o dist/domp-create-many.js",
+    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c | uglifyjs -c -m > dist/domp-create-many.min.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "npm run clean && npm run lint && npm run build",
     "preversion": "npm run lint"

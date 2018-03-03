@@ -1,13 +1,18 @@
 {
   "env": {
     "cjs": {
-      "presets": [ "es2015" ],
+      "presets": [[ "@babel/env", { "modules": "commonjs", "shippedProposals": true } ]],
       "plugins": [
         "add-module-exports"
       ]
     },
+
     "es": {
-      "presets": [ "./babel/preset" ]
+      "presets": [[ "@babel/env", { "modules": false, "shippedProposals": true } ]]
+    },
+
+    "umd": {
+      "presets": [[ "@babel/env", { "modules": false, "shippedProposals": true } ]]
     }
   }
 }

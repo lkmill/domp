@@ -1,2 +1,3 @@
-# dom-create-one
-Create DOM from string, returning first child
+# @domp/create-many
+
+Create DOM from string, returning an array.

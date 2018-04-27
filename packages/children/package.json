@@ -1,6 +1,6 @@
 {
-  "name": "dom-children",
-  "version": "3.0.0",
+  "name": "@domp/children",
+  "version": "0.1.0",
   "description": "DOM, HTML",
   "main": "cjs/index.js",
   "jsnext:main": "es/index.js",

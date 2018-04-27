@@ -1,5 +1,5 @@
 {
-  "name": "dom-append-to",
+  "name": "@domp/append-to",
   "version": "0.1.0",
   "description": "DOM, HTML",
   "main": "cjs/index.js",

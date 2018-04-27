@@ -1,4 +1,4 @@
-import is from 'dom-is';
+import is from 'dom-is'
 
 /**
  * @param {Element} element - element to get children of
@@ -6,14 +6,14 @@ import is from 'dom-is';
  * Criteria to test against (see dom-is)
  * @returns {Element[]} Array of all (matching) children
  */
-export default function domChildren(element, criteria) {
-  if (!element || !element.children) return [];
+export default function domChildren (element, criteria) {
+  if (!element || !element.children) return []
 
-  let children = Array.from(element.children);
+  let children = Array.from(element.children)
 
   if (criteria) {
-    children = children.filter((child) => is(child, criteria));
+    children = children.filter((child) => is(child, criteria))
   }
 
-  return children;
+  return children
 }

@@ -1,4 +1,4 @@
-import is from 'dom-is'
+import is from '@domp/is'
 
 /**
  * @param {Element} element - element to get children of

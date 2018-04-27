@@ -57,10 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
-/dump
+# Do not commit package-lock for libraries
+package-lock.json
 
+/index.js
+/index.mjs
 /dist
 
-/es
-
-/cjs
+/dump

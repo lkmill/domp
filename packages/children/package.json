@@ -2,14 +2,15 @@
   "name": "@domp/children",
   "version": "0.1.0",
   "description": "DOM, HTML",
-  "main": "cjs/index.js",
-  "jsnext:main": "es/index.js",
+  "main": "./index",
   "scripts": {
-    "clean": "rimraf *.js es lib dist",
-    "lint": "eslint src",
-    "build": "npm run build:cjs && npm run build:es",
-    "build:cjs": "BABEL_ENV=cjs babel src --out-dir cjs",
-    "build:es": "BABEL_ENV=es babel src --out-dir es",
+    "clean": "rimraf index.js index.mjs dist",
+    "lint": "eslint --ext .js --ext .mjs src",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min",
+    "build:cjs": "BABEL_ENV=cjs babel src --out-dir .",
+    "build:esm": "BABEL_ENV=esm babel src --keep-file-extension --out-dir .",
+    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -o dist/domp-children.js",
+    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c | uglifyjs -c -m > dist/domp-children.min.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "npm run clean && npm run lint && npm run build",
     "preversion": "npm run lint"
@@ -29,17 +30,20 @@
   },
   "homepage": "https://github.com/lohfu/dom-children#readme",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
+    "@babel/cli": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-es2015": "^6.24.1",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.1.0",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.2",
+    "rollup": "^0.58.2",
+    "rollup-plugin-babel": "^4.0.0-beta.2"
   },
   "dependencies": {
-    "dom-is": "^0.1.2"
+    "@domp/is": "^0.2.1"
   }
 }

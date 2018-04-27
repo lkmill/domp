@@ -8,7 +8,7 @@
     "lint": "eslint --ext .js --ext .mjs src",
     "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min",
     "build:cjs": "BABEL_ENV=cjs babel src --out-dir .",
-    "build:esm": "BABEL_ENV=es babel src --keep-file-extension --out-dir .",
+    "build:esm": "BABEL_ENV=esm babel src --keep-file-extension --out-dir .",
     "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -o dist/domp-is.js",
     "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c | uglifyjs -c -m > dist/domp-is.min.js",
     "test": "echo \"Error: no test specified\" && exit 1",

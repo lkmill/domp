@@ -1,5 +1,5 @@
 {
-  "name": "dom-closest",
+  "name": "@domp/closest",
   "version": "0.1.0",
   "description": "DOM, HTML",
   "main": "cjs/index.js",

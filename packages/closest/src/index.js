@@ -1,17 +1,17 @@
-import is from 'dom-is';
+import is from 'dom-is'
 
-export default function closest(ref, ufo, stop = document.body) {
+export default function closest (ref, ufo, stop = document.body) {
   if (ufo instanceof NodeList || ufo instanceof HTMLCollection) {
-    ufo = Array.from(ufo);
-  } 
+    ufo = Array.from(ufo)
+  }
 
-  node = ref;
+  let node = ref
 
   while (node && !is(node, stop)) {
     if (!ufo || is(node, ufo)) {
-      return node;
+      return node
     }
 
-    node = node.parentNode;
+    node = node.parentNode
   }
 }

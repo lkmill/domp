@@ -57,12 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
-.tern-port
+# Do not commit package-lock for libraries
+package-lock.json
 
-/dump
-
+/index.js
+/index.mjs
 /dist
 
-/es
-
-/cjs
+/dump

@@ -1,4 +1,4 @@
-import is from 'dom-is'
+import is from '@domp/is'
 
 export default function closest (ref, ufo, stop = document.body) {
   if (ufo instanceof NodeList || ufo instanceof HTMLCollection) {

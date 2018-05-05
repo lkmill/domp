@@ -1,4 +1,3 @@
-// const closest = require('../index.js')
 import closest from '../src/index'
 
 const html = `

@@ -1,2 +1,3 @@
-# dom-scroll-to
+# @domp/scroll-to
+
 Scroll to

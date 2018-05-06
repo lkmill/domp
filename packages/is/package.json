@@ -1,6 +1,6 @@
 {
   "name": "@domp/is",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "DOM, HTML",
   "main": "./index",
   "scripts": {

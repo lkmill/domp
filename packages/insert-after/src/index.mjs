@@ -1,5 +1,5 @@
 // TODO implement insertAfter(nodeList, nodeList)
-export default function (element, reference) {
+export default function insertAfter (element, reference) {
   if (reference.parentNode) {
     const next = reference.nextSibling
 

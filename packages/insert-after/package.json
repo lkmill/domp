@@ -11,8 +11,8 @@
     "build:esm": "BABEL_ENV=esm babel src --keep-file-extension --out-dir .",
     "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -o dist/domp-insert-after.js",
     "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c | uglifyjs -c -m > dist/domp-insert-after.min.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "npm run clean && npm run lint && npm run build"
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
+    "test": "BABEL_ENV=cjs jest"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,8 @@
     "@babel/cli": "^7.0.0-beta.46",
     "@babel/core": "^7.0.0-beta.46",
     "@babel/preset-env": "^7.0.0-beta.46",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^22.4.3",
     "babel-plugin-add-module-exports": "^0.2.1",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
@@ -39,6 +41,7 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.1.0",
+    "jest": "^22.4.3",
     "rimraf": "^2.6.2",
     "rollup": "^0.58.2",
     "rollup-plugin-babel": "^4.0.0-beta.2"

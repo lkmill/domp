@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lohfu/dom-insert-after.git"
+    "url": "git+https://github.com/dom-packages/insert-after.git"
   },
   "keywords": [
     "DOM",
@@ -25,9 +25,9 @@
   "author": "Linus Miller <lohfu@lohfu.io> (https://lohfu.io/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lohfu/dom-insert-after/issues"
+    "url": "https://github.com/dom-packages/insert-after/issues"
   },
-  "homepage": "https://github.com/lohfu/dom-insert-after#readme",
+  "homepage": "https://github.com/dom-packages/insert-after#readme",
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.46",
     "@babel/core": "^7.0.0-beta.46",

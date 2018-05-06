@@ -1,2 +1,3 @@
-# dom-replace-with
+# @domp/replace-with
+
 Replace a DOM node with another

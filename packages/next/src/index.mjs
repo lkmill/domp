@@ -1,4 +1,4 @@
-import is from 'dom-is'
+import is from '@domp/is'
 
 export default function next (element, selector) {
   let nextElement = element.nextElementSibling || null

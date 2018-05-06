@@ -1,2 +1,3 @@
-# dom-select-one
-Wrapper around querySelector
+# @domp/select
+
+Wrapper around querySelector that does some other magic.

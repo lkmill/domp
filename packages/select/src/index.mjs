@@ -1,6 +1,6 @@
 import createOne from '@domp/create'
 
-export default function $ (ufo, context) {
+export default function select (ufo, context) {
   if (typeof ufo === 'string') {
     // if it seems to be HTML, create an element
     if (/^\s*</.test(ufo)) {
@@ -8,7 +8,7 @@ export default function $ (ufo, context) {
     }
 
     if (context) {
-      return $(context).querySelector(ufo)
+      return select(context).querySelector(ufo)
     }
 
     return document.querySelector(ufo)

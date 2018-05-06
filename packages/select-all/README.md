@@ -1,2 +1,3 @@
-# dom-select-many
-Wrapper around querySelectorAll
+# @domp/select-many
+
+Wrapper around querySelectorAll with some extra sugar

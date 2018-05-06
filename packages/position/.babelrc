@@ -1,0 +1,22 @@
+{
+  "env": {
+    "cjs": {
+      "presets": [
+        [ "@babel/env", { "shippedProposals": true } ]
+      ],
+      "plugins": [
+        "add-module-exports"
+      ]
+    },
+
+    "esm": {
+      "presets": [
+        [ "@babel/env", { "modules": false, "shippedProposals": true } ]
+      ]
+    },
+
+    "umd": {
+      "presets": [[ "@babel/env", { "modules": false, "shippedProposals": true } ]]
+    }
+  }
+}

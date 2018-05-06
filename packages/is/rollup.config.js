@@ -9,6 +9,6 @@ export default {
   input: 'src/index.mjs',
   output: {
     format: 'umd',
-    name: 'dompIs',
+    name: '$is',
   },
 }

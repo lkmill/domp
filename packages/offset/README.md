@@ -1,2 +1,3 @@
-# dom-offset
+# @domp/offset
+
 Calculate offset

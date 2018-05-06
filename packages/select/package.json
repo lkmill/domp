@@ -45,6 +45,6 @@
     "rollup-plugin-node-resolve": "^3.3.0"
   },
   "dependencies": {
-    "dom-create-one": "^0.1.0"
+    "@domp/create": "^0.2.0"
   }
 }

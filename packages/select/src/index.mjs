@@ -1,4 +1,4 @@
-import createOne from 'dom-create-one'
+import createOne from '@domp/create'
 
 export default function $ (ufo, context) {
   if (typeof ufo === 'string') {

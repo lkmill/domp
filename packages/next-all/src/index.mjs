@@ -1,4 +1,4 @@
-import is from 'dom-is'
+import is from '@domp/is'
 
 export default function nextAll (element, selector) {
   const siblings = Array.from(element.parentNode.children)

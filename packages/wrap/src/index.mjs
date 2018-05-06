@@ -1,4 +1,4 @@
-import $ from 'dom-select-one'
+import $ from '@domp/select'
 
 export default function wrap (element, ufo) {
   // TODO enable by tagName

@@ -57,10 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
-/dump
+package-lock.json
 
 /dist
-
-/es
-
-/cjs
+/lib

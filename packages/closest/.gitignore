@@ -60,6 +60,8 @@ typings/
 # Do not commit package-lock for libraries
 package-lock.json
 
+/fp.js
+/fp.mjs
 /index.js
 /index.mjs
 /dist

@@ -1,4 +1,5 @@
 import closest from '../src/index'
+import closestFp from '../src/fp'
 
 const html = `
 <div id='a-1' class='a a-1'>
@@ -51,4 +52,27 @@ test('returns reference node if it matches selector', () => {
   find = closest(a4, 'div')
 
   expect(find).toBe(a4)
+})
+
+test('fp: all', () => {
+  let find = closestFp('#a-1', a4)
+
+  expect(find).toBe(a1)
+
+  find = closestFp('#a-1')(a4)
+
+  expect(find).toBe(a1)
+
+  find = closestFp('#b-1', a4)
+
+  expect(find).toBe(undefined)
+
+  // class
+  find = closestFp('.a-2')(a4)
+
+  expect(find).toBe(a2)
+
+  find = closestFp('.b-2', a4)
+
+  expect(find).toBe(undefined)
 })

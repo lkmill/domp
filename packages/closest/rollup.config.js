@@ -17,6 +17,6 @@ export default {
   input: 'src/index.mjs',
   output: {
     format: 'umd',
-    name: 'dompClosest',
+    name: '$closest',
   },
 }

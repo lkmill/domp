@@ -2,7 +2,7 @@
   "name": "@domp/fp",
   "version": "0.0.1",
   "description": "Convert regular dom-packages to auto-curried, iteratee-first and data-last methods",
-  "main": "./index",
+  "main": "lib/index",
   "scripts": {
     "clean": "rimraf dist lib",
     "lint": "eslint --ext .js --ext .mjs src __tests__",

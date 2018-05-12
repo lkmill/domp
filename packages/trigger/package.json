@@ -6,11 +6,13 @@
   "scripts": {
     "clean": "rimraf index.js index.mjs dist",
     "lint": "eslint --ext .js --ext .mjs src",
-    "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min && npm run build:umd:fp && npm run build:umd:fp:min",
     "build:cjs": "BABEL_ENV=cjs babel src --out-dir .",
     "build:esm": "BABEL_ENV=esm babel src --keep-file-extension --out-dir .",
-    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -o dist/trigger.js",
-    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c | uglifyjs -c -m > dist/trigger.min.js",
+    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -i src/index.mjs -o dist/trigger.js",
+    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c -i src/index.mjs | uglifyjs -c -m > dist/trigger.min.js",
+    "build:umd:fp": "mkdir -p dist && BABEL_ENV=umd rollup -c -i src/fp.mjs -o dist/trigger.fp.js",
+    "build:umd:fp:min": "mkdir -p dist && BABEL_ENV=umd rollup -c -i src/fp.mjs | uglifyjs -c -m > dist/trigger.fp.min.js",
     "prepublish": "npm run clean && npm run lint && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -41,6 +43,10 @@
     "eslint-plugin-standard": "^3.1.0",
     "rimraf": "^2.6.2",
     "rollup": "^0.58.2",
-    "rollup-plugin-babel": "^4.0.0-beta.2"
+    "rollup-plugin-babel": "^4.0.0-beta.2",
+    "rollup-plugin-node-resolve": "^3.3.0"
+  },
+  "dependencies": {
+    "@domp/fp": "0.0.2"
   }
 }

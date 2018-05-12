@@ -1,5 +1,5 @@
 {
-  "name": "@domp/select-many",
+  "name": "@domp/find-many",
   "version": "0.2.0",
   "description": "DOM, HTML",
   "main": "lib/index",
@@ -9,14 +9,14 @@
     "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min",
     "build:cjs": "BABEL_ENV=cjs babel src --out-dir lib",
     "build:esm": "BABEL_ENV=esm babel src --keep-file-extension --out-dir lib",
-    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -o dist/select-many.js",
-    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c | uglifyjs -c -m > dist/select-many.min.js",
+    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -o dist/find-many.js",
+    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c | uglifyjs -c -m > dist/find-many.min.js",
     "prepublish": "npm run clean && npm run lint && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dom-packages/select-many.git"
+    "url": "git+https://github.com/dom-packages/find-many.git"
   },
   "keywords": [
     "DOM",
@@ -25,9 +25,9 @@
   "author": "Linus Miller <lohfu@lohfu.io> (https://lohfu.io/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dom-packages/select-many/issues"
+    "url": "https://github.com/dom-packages/find-many/issues"
   },
-  "homepage": "https://github.com/dom-packages/select-many#readme",
+  "homepage": "https://github.com/dom-packages/find-many#readme",
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.46",
     "@babel/core": "^7.0.0-beta.46",

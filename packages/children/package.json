@@ -4,7 +4,7 @@
   "description": "DOM, HTML",
   "main": "./index",
   "scripts": {
-    "clean": "rimraf *.map index.js index.mjs dist",
+    "clean": "rimraf *.map fp.js fp.mjs index.js index.mjs dist",
     "lint": "eslint --ext .js --ext .mjs src",
     "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min",
     "build:cjs": "BABEL_ENV=cjs babel src --out-dir . --source-maps",
@@ -46,6 +46,7 @@
     "rollup-plugin-uglify": "^3.0.0"
   },
   "dependencies": {
+    "@domp/fp": "0.0.2",
     "@domp/is": "^0.2.1"
   }
 }

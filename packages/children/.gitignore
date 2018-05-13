@@ -61,6 +61,8 @@ typings/
 package-lock.json
 
 /*.map
+/fp.js
+/fp.mjs
 /index.js
 /index.mjs
 /dist

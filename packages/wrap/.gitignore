@@ -62,3 +62,5 @@ package-lock.json
 /index.js
 /index.mjs
 /dist
+
+/*.map

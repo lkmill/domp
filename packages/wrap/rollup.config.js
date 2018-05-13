@@ -16,7 +16,9 @@ export default {
   ],
   input: 'src/index.mjs',
   output: {
+    file: 'dist/wrap.js',
     format: 'umd',
     name: '$wrap',
+    sourcemap: true,
   },
 }

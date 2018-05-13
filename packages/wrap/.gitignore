@@ -59,5 +59,6 @@ typings/
 
 package-lock.json
 
+/index.js
+/index.mjs
 /dist
-/lib

@@ -16,6 +16,7 @@ export default {
   ],
   input: 'src/index.mjs',
   output: {
+    file: 'dist/closest.js',
     format: 'umd',
     name: '$closest',
   },

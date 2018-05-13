@@ -8,6 +8,7 @@ export default {
   ],
   input: 'src/index.mjs',
   output: {
+    file: 'dist/append-to.js',
     format: 'umd',
     name: '$appendTo',
   },

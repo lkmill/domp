@@ -16,7 +16,8 @@ export default {
   ],
   input: 'src/index.mjs',
   output: {
+    file: 'dist/ancestors.js',
     format: 'umd',
-    name: 'dompAncestors',
+    name: '$ancestors',
   },
 }

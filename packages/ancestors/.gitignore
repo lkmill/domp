@@ -59,7 +59,7 @@ typings/
 
 package-lock.json
 
+/*.map
 /index.js
 /index.mjs
-
 /dist

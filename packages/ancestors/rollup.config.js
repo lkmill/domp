@@ -19,5 +19,6 @@ export default {
     file: 'dist/ancestors.js',
     format: 'umd',
     name: '$ancestors',
+    sourcemap: true,
   },
 }

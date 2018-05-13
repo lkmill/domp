@@ -19,5 +19,6 @@ export default {
     file: 'dist/closest.js',
     format: 'umd',
     name: '$closest',
+    sourcemap: true,
   },
 }

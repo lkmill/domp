@@ -19,5 +19,6 @@ export default {
     file: 'dist/children.js',
     format: 'umd',
     name: '$children',
+    sourcemap: true,
   },
 }

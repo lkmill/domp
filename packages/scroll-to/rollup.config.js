@@ -8,6 +8,7 @@ export default {
   ],
   input: 'src/index.mjs',
   output: {
+    file: 'dist/scroll-to.js',
     format: 'umd',
     name: '$scrollTo',
   },

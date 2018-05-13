@@ -19,5 +19,6 @@ export default {
     file: 'dist/scroll-into-view.js',
     format: 'umd',
     name: '$scrollIntoView',
+    sourcemap: true,
   },
 }

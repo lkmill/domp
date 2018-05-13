@@ -11,5 +11,6 @@ export default {
     file: 'dist/scroll-to.js',
     format: 'umd',
     name: '$scrollTo',
+    sourcemap: true,
   },
 }

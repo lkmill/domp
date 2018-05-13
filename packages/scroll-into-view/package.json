@@ -45,8 +45,8 @@
     "rollup-plugin-node-resolve": "^3.3.0"
   },
   "dependencies": {
+    "@domp/find": "^0.2.2",
     "@domp/offset": "^0.2.0",
-    "@domp/scroll-to": "^0.2.0",
-    "@domp/select": "^0.2.1"
+    "@domp/scroll-to": "^0.2.1"
   }
 }

@@ -1,4 +1,4 @@
-import $ from '@domp/select'
+import $ from '@domp/find'
 import offset from '@domp/offset'
 import scrollTo from '@domp/scroll-to'
 

@@ -9,8 +9,8 @@
     "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min",
     "build:cjs": "BABEL_ENV=cjs babel src --out-dir .",
     "build:esm": "BABEL_ENV=esm babel src --keep-file-extension --out-dir .",
-    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -o dist/domp-children.js",
-    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c | uglifyjs -c -m > dist/domp-children.min.js",
+    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c",
+    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c rollup.config.minify.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "npm run clean && npm run lint && npm run build",
     "preversion": "npm run lint"
@@ -42,7 +42,8 @@
     "rimraf": "^2.6.2",
     "rollup": "^0.58.2",
     "rollup-plugin-babel": "^4.0.0-beta.2",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^3.0.0"
   },
   "dependencies": {
     "@domp/is": "^0.2.1"

@@ -16,6 +16,7 @@ export default {
   ],
   input: 'src/index.mjs',
   output: {
+    file: 'dist/children.js',
     format: 'umd',
     name: '$children',
   },

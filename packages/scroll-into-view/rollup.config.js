@@ -16,6 +16,7 @@ export default {
   ],
   input: 'src/index.mjs',
   output: {
+    file: 'dist/scroll-into-view.js',
     format: 'umd',
     name: '$scrollIntoView',
   },

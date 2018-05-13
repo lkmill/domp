@@ -1,4 +1,4 @@
-import $ from '@domp/select'
+import $ from '@domp/find'
 
 export default function wrap (element, ufo) {
   // TODO enable by tagName

@@ -11,5 +11,6 @@ export default {
     file: 'dist/append-to.js',
     format: 'umd',
     name: '$appendTo',
+    sourcemap: true,
   },
 }

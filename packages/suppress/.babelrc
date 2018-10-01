@@ -1,13 +1,19 @@
 {
   "env": {
     "cjs": {
-      "presets": [ "es2015" ],
-      "plugins": [
-        "add-module-exports"
+      "presets": [
+        [ "@babel/env", { "shippedProposals": true } ]
       ]
     },
-    "es": {
-      "presets": [ "./babel/preset" ]
+
+    "esm": {
+      "presets": [
+        [ "@babel/env", { "modules": false, "shippedProposals": true } ]
+      ]
+    },
+
+    "umd": {
+      "presets": [[ "@babel/env", { "modules": false, "shippedProposals": true } ]]
     }
   }
 }

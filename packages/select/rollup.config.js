@@ -16,7 +16,9 @@ export default {
   ],
   input: 'src/index.mjs',
   output: {
+    file: 'dist/find.js',
     format: 'umd',
     name: '$find',
+    sourcemap: true,
   },
 }

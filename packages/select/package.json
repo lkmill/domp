@@ -7,10 +7,10 @@
     "clean": "rimraf dist lib",
     "lint": "eslint --ext .js --ext .mjs src",
     "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min",
-    "build:cjs": "BABEL_ENV=cjs babel src --out-dir lib",
-    "build:esm": "BABEL_ENV=esm babel src --keep-file-extension --out-dir lib",
-    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -o dist/find.js",
-    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c | uglifyjs -c -m > dist/find.min.js",
+    "build:cjs": "BABEL_ENV=cjs babel src --out-dir lib --source-maps",
+    "build:esm": "BABEL_ENV=esm babel src --keep-file-extension --out-dir lib --source-maps",
+    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c ",
+    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c rollup.config.minify.js",
     "prepublish": "npm run clean && npm run lint && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -42,7 +42,8 @@
     "rimraf": "^2.6.3",
     "rollup": "^1.1.2",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-node-resolve": "^4.0.0"
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.2"
   },
   "dependencies": {
     "@domp/create": "^0.2.0"

@@ -3,6 +3,8 @@
   "version": "0.2.1",
   "description": "DOM, HTML",
   "main": "./index",
+  "module": "./index.mjs",
+  "jsnext:main": "./index.mjs",
   "scripts": {
     "clean": "rimraf *.map index.js dist",
     "lint": "eslint --ext .js --ext .mjs src",
@@ -46,8 +48,8 @@
     "rollup-plugin-uglify": "^6.0.2"
   },
   "dependencies": {
-    "@domp/find": "^0.2.2",
+    "@domp/find": "^0.2.3",
     "@domp/offset": "^0.2.1",
-    "@domp/scroll-to": "^0.2.1"
+    "@domp/scroll-to": "^0.2.2"
   }
 }

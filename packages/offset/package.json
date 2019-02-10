@@ -3,6 +3,8 @@
   "version": "0.2.0",
   "description": "DOM, HTML",
   "main": "./index",
+  "jsnext:main": "./index.mjs",
+  "module": "./index.mjs",
   "scripts": {
     "clean": "rimraf index.js index.mjs dist",
     "lint": "eslint --ext .js --ext .mjs src",

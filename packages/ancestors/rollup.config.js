@@ -8,10 +8,7 @@ export default {
     }),
     nodeResolve({
       extensions: [ '.mjs', '.js' ],
-      jsnext: true,
-      main: true,
-      module: true,
-      browser: true,
+      mainFields: [ 'browser', 'module', 'main' ],
     }),
   ],
   input: 'src/index.mjs',

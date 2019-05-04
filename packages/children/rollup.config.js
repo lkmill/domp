@@ -5,13 +5,7 @@ const plugins = [
   babel({
     exclude: 'node_modules/**/*',
   }),
-  nodeResolve({
-    extensions: [ '.mjs', '.js' ],
-    jsnext: true,
-    main: true,
-    module: true,
-    browser: true,
-  }),
+  nodeResolve(),
 ]
 
 export default [{

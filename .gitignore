@@ -82,3 +82,16 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+yarn.lock
+package-lock.json
+
+packages/*/dist
+packages/*/fp.js
+packages/*/fp.js.map
+packages/*/fp.mjs
+packages/*/fp.mjs.map
+packages/*/index.js
+packages/*/index.js.map
+packages/*/index.mjs
+packages/*/index.mjs.map

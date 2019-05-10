@@ -3,20 +3,10 @@
   "version": "0.2.0",
   "description": "DOM, HTML",
   "main": "./index",
-  "scripts": {
-    "clean": "rimraf index.js index.mjs dist",
-    "lint": "eslint --ext .js --ext .mjs src __tests__",
-    "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min",
-    "build:cjs": "BABEL_ENV=cjs babel src --out-dir .",
-    "build:esm": "BABEL_ENV=esm babel src --keep-file-extension --out-dir .",
-    "build:umd": "mkdir -p dist && BABEL_ENV=umd rollup -c -o dist/domp-next.js",
-    "build:umd:min": "mkdir -p dist && BABEL_ENV=umd rollup -c | uglifyjs -c -m > dist/domp-next.min.js",
-    "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
-    "test": "BABEL_ENV=cjs jest"
-  },
+  "module": "./index.mjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dom-packages/next.git"
+    "url": "git+https://github.com/lohfu/domp.git"
   },
   "keywords": [
     "DOM",
@@ -25,28 +15,9 @@
   "author": "Linus Miller <lohfu@lohfu.io> (https://lohfu.io/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dom-packages/next/issues"
+    "url": "https://github.com/lohfu/domp/issues"
   },
-  "homepage": "https://github.com/dom-packages/next#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.46",
-    "@babel/core": "^7.0.0-beta.46",
-    "@babel/preset-env": "^7.0.0-beta.46",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^22.4.3",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "jest": "^22.4.3",
-    "rimraf": "^2.6.2",
-    "rollup": "^0.58.2",
-    "rollup-plugin-babel": "^4.0.0-beta.2",
-    "rollup-plugin-node-resolve": "^3.3.0"
-  },
+  "homepage": "https://github.com/lohfu/domp/tree/master/packages/next/README.md",
   "dependencies": {
     "@domp/is": "^0.2.2"
   }

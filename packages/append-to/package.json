@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/lohfu/domp/issues"
   },
-  "homepage": "https://github.com/lohfu/domp/tree/master/packages/append-to/README.md"
+  "homepage": "https://github.com/lohfu/domp/tree/master/packages/append-to/README.md",
+  "dependencies": {
+    "@domp/fp": "^0.0.2"
+  }
 }

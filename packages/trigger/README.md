@@ -1,2 +1,3 @@
-# dom-trigger
+# @domp/trigger
+
 Trigger DOM events

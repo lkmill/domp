@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/lohfu/domp/tree/master/packages/siblings/README.md",
   "dependencies": {
+    "@domp/fp": "0.0.2",
     "@domp/is": "^0.2.2"
   }
 }

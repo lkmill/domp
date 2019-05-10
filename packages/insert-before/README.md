@@ -1,2 +1,3 @@
-# dom-insert-before
+# @domp/insert-before
+
 Insert a DOM node before another

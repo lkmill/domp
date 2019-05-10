@@ -1,6 +1,6 @@
 {
   "name": "@domp/append-to",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "DOM, HTML",
   "main": "./index",
   "module": "./index.mjs",

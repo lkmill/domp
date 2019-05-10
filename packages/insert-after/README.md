@@ -1,2 +1,3 @@
-# @domp/-insert-after
+# @domp/insert-after
+
 Insert a DOM node after another

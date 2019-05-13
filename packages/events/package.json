@@ -1,0 +1,21 @@
+{
+  "name": "@domp/events",
+  "version": "0.0.0",
+  "description": "DOM, HTML",
+  "main": "./index",
+  "module": "./index.mjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lohfu/domp.git"
+  },
+  "keywords": [
+    "DOM",
+    "HTML"
+  ],
+  "author": "Linus Miller <lohfu@lohfu.io> (https://lohfu.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lohfu/domp/issues"
+  },
+  "homepage": "https://github.com/lohfu/domp/tree/master/packages/events/README.md"
+}

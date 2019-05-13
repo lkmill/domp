@@ -1,6 +1,6 @@
 {
   "name": "@domp/fp",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Convert regular dom-packages to auto-curried, iteratee-first and data-last methods",
   "main": "./index",
   "module": "./index.mjs",

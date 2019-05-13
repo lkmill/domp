@@ -1,6 +1,6 @@
 {
   "name": "@domp/select-all",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "DOM, HTML",
   "main": "./index",
   "module": "./index.mjs",
@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/lohfu/domp/tree/master/packages/select-all/README.md",
   "dependencies": {
-    "@domp/create-many": "^0.2.1"
+    "@domp/create-many": "^0.3.0"
   }
 }

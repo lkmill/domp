@@ -1,6 +1,6 @@
 {
   "name": "@domp/wrap",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "DOM, HTML",
   "main": "./index",
   "module": "./index.mjs",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/lohfu/domp/tree/master/packages/wrap/README.md",
   "dependencies": {
-    "@domp/fp": "0.0.2",
-    "@domp/select": "^0.2.2"
+    "@domp/fp": "^0.1.0",
+    "@domp/select": "^0.3.0"
   }
 }

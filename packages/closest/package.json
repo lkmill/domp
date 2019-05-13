@@ -1,6 +1,6 @@
 {
   "name": "@domp/closest",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "DOM, HTML",
   "main": "./index",
   "module": "./index.mjs",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/lohfu/domp/tree/master/packages/closest/README.md",
   "dependencies": {
-    "@domp/fp": "0.0.2",
-    "@domp/is": "^0.2.2"
+    "@domp/fp": "^0.1.0",
+    "@domp/is": "^0.3.0"
   }
 }

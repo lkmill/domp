@@ -1,6 +1,6 @@
 {
   "name": "@domp/insert-after",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "DOM, HTML",
   "main": "./index",
   "module": "./index.mjs",
@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/lohfu/domp/tree/master/packages/insert-after/README.md",
   "dependencies": {
-    "@domp/fp": "0.0.2"
+    "@domp/fp": "^0.1.0"
   }
 }

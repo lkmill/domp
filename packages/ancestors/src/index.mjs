@@ -1,8 +1,8 @@
 import is from '@domp/is'
 
-export default function ancestors (ref, ufo, stop = document.body) {
-  if (ufo instanceof NodeList || ufo instanceof HTMLCollection) {
-    ufo = Array.from(ufo)
+export default function ancestors (ref, criteria, stop = document.body) {
+  if (criteria instanceof NodeList || criteria instanceof HTMLCollection) {
+    criteria = Array.from(criteria)
   }
 
   const result = []
@@ -10,7 +10,7 @@ export default function ancestors (ref, ufo, stop = document.body) {
   let node = ref.parentNode
 
   while (node && !is(node, stop)) {
-    if (!ufo || is(node, ufo)) {
+    if (!criteria || is(node, criteria)) {
       result.push(node)
     }
 

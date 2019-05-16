@@ -11,7 +11,7 @@ export default function ancestors (ref, ufo, stop = document.body) {
 
   while (node && !is(node, stop)) {
     if (!ufo || is(node, ufo)) {
-      return result.push(node)
+      result.push(node)
     }
 
     node = node.parentNode

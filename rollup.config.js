@@ -9,7 +9,7 @@ const nodeResolve = require('rollup-plugin-node-resolve')
 const babelConfig = require('./babel.config')
 const pkg = require(path.join(process.cwd(), 'package.json'))
 
-const [ , name ] = pkg.name.match(/^@domp\/(.*)$/)
+const name = pkg.name.startsWith('@domp') ? pkg.name.match(/^@domp\/(.*)$/)[1] : pkg.name
 const umdGlobal = _.camelCase(name)
 
 const plugins = [

@@ -1,14 +1,11 @@
-'use strict'
+import path from 'path'
+import fs from 'fs'
+import _ from 'lodash'
+import { babel } from '@rollup/plugin-babel'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import babelConfig from './babel.config.cjs'
 
-const path = require('path')
-const fs = require('fs')
-const _ = require('lodash')
-const { babel } = require('@rollup/plugin-babel')
-const { nodeResolve } = require('@rollup/plugin-node-resolve')
-
-const babelConfig = require('./babel.config')
-const pkg = require(path.join(process.cwd(), 'package.json'))
-
+const pkg = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), './package.json')))
 const name = pkg.name.startsWith('@domp') ? pkg.name.match(/^@domp\/(.*)$/)[1] : pkg.name
 const umdGlobal = _.camelCase(name)
 
@@ -45,4 +42,4 @@ if (fs.existsSync(path.join(process.cwd(), 'src/fp.mjs'))) {
   })
 }
 
-module.exports = configs
+export default configs

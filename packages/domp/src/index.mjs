@@ -5,7 +5,7 @@ import closest from '@domp/closest'
 import create from '@domp/create'
 import createMany from '@domp/create-many'
 import empty from '@domp/empty'
-import events from '@domp/events'
+import { off, on, once } from '@domp/events'
 import fp from '@domp/fp'
 import insertAfter from '@domp/insert-after'
 import insertBefore from '@domp/insert-before'
@@ -54,7 +54,6 @@ export {
   create,
   createMany,
   empty,
-  events,
   fp,
   insertAfter,
   insertBefore,
@@ -62,6 +61,9 @@ export {
   next,
   nextAll,
   offset,
+  off,
+  on,
+  once,
   position,
   prependTo,
   prev,

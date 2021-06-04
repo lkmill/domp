@@ -1,6 +1,6 @@
 {
   "name": "@domp/text",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "DOM, HTML",
   "type": "module",
   "main": "./dist/esm/index.js",
@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/lohfu/domp/tree/master/packages/text/README.md",
   "dependencies": {
-    "@domp/select-all": "^0.3.0"
+    "@domp/select-all": "^0.4.0"
   }
 }

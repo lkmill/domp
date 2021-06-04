@@ -1,6 +1,6 @@
 {
   "name": "@domp/scroll-into-view",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "DOM, HTML",
   "type": "module",
   "main": "./dist/esm/index.js",
@@ -25,9 +25,9 @@
   },
   "homepage": "https://github.com/lohfu/domp/tree/master/packages/scroll-into-view/README.md",
   "dependencies": {
-    "@domp/fp": "^0.1.0",
-    "@domp/offset": "^0.3.0",
-    "@domp/scroll-to": "^0.3.0",
-    "@domp/select": "^0.3.0"
+    "@domp/fp": "^0.2.0",
+    "@domp/offset": "^0.4.0",
+    "@domp/scroll-to": "^0.4.0",
+    "@domp/select": "^0.4.0"
   }
 }

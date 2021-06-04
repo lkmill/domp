@@ -1,6 +1,6 @@
 {
   "name": "@domp/position",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "DOM, HTML",
   "type": "module",
   "main": "./dist/esm/index.js",

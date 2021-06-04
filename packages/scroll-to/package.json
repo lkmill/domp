@@ -2,8 +2,11 @@
   "name": "@domp/scroll-to",
   "version": "0.3.0",
   "description": "DOM, HTML",
-  "main": "./index",
-  "module": "./index.mjs",
+  "type": "module",
+  "main": "./dist/esm/index.js",
+  "exports": "./dist/esm/index.js",
+  "module": "./dist/esm/index.js",
+  "unpkg": "./dist/scroll-to.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lohfu/domp.git"

@@ -2,8 +2,11 @@
   "name": "@domp/fp",
   "version": "0.1.0",
   "description": "Convert regular dom-packages to auto-curried, iteratee-first and data-last methods",
-  "main": "./index",
-  "module": "./index.mjs",
+  "type": "module",
+  "main": "./dist/esm/index.js",
+  "exports": "./dist/esm/index.js",
+  "module": "./dist/esm/index.js",
+  "unpkg": "./dist/fp.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lohfu/domp.git"

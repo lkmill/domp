@@ -2,8 +2,14 @@
   "name": "@domp/children",
   "version": "0.4.0",
   "description": "DOM, HTML",
-  "main": "./index",
-  "module": "./index.mjs",
+  "type": "module",
+  "main": "./dist/esm/index.js",
+  "exports": {
+    ".": "./dist/esm/index.js",
+    "./fp": "./dist/esm/fp.js"
+  },
+  "module": "./dist/esm/index.js",
+  "unpkg": "./dist/children.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lohfu/domp.git"

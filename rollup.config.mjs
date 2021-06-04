@@ -20,7 +20,7 @@ const plugins = [
 
 const configs = [{
   plugins,
-  input: 'src/index.mjs',
+  input: 'src/index.js',
   output: {
     file: `dist/${name}.js`,
     format: 'umd',
@@ -29,10 +29,10 @@ const configs = [{
   },
 }]
 
-if (fs.existsSync(path.join(process.cwd(), 'src/fp.mjs'))) {
+if (fs.existsSync(path.join(process.cwd(), 'src/fp.js'))) {
   configs.push({
     plugins,
-    input: 'src/fp.mjs',
+    input: 'src/fp.js',
     output: {
       file: `dist/${name}.fp.js`,
       format: 'umd',

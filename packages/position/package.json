@@ -2,8 +2,11 @@
   "name": "@domp/position",
   "version": "0.2.0",
   "description": "DOM, HTML",
-  "main": "./index",
-  "module": "./index.mjs",
+  "type": "module",
+  "main": "./dist/esm/index.js",
+  "exports": "./dist/esm/index.js",
+  "module": "./dist/esm/index.js",
+  "unpkg": "./dist/position.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lohfu/domp.git"

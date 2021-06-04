@@ -5,7 +5,11 @@
   "author": "Linus Miller <lohfu@lohfu.io> (https://lohfu.io/)",
   "homepage": "https://github.com/lohfu/domp#readme",
   "license": "MIT",
-  "main": "index.js",
+  "type": "module",
+  "main": "./dist/esm/index.js",
+  "export": "./dist/esm/index.js",
+  "module": "./dist/esm/index.js",
+  "unpkg": "./dist/domp.min.js",
   "files": [
     "lib"
   ],

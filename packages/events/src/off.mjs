@@ -27,7 +27,7 @@ function removeListeners (element, events, listener) {
         }
       }
     } else {
-      for (let [ , wrappedListener ] of map) {
+      for (const [, wrappedListener] of map) {
         element.removeEventListener(event, wrappedListener)
       }
 

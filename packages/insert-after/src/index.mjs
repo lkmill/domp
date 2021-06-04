@@ -11,11 +11,13 @@ export default function insertAfter (element, reference) {
         element = Array.from(element)
       }
 
-      element.forEach(next ? (el) => {
-        reference.parentNode.insertBefore(el, next)
-      } : (el) => {
-        reference.parentNode.appendChild(el)
-      })
+      element.forEach(next
+        ? (el) => {
+            reference.parentNode.insertBefore(el, next)
+          }
+        : (el) => {
+            reference.parentNode.appendChild(el)
+          })
     }
   }
 }

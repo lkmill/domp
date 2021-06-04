@@ -3,8 +3,8 @@
 const path = require('path')
 const fs = require('fs')
 const _ = require('lodash')
-const babel = require('rollup-plugin-babel')
-const nodeResolve = require('rollup-plugin-node-resolve')
+const { babel } = require('@rollup/plugin-babel')
+const { nodeResolve } = require('@rollup/plugin-node-resolve')
 
 const babelConfig = require('./babel.config')
 const pkg = require(path.join(process.cwd(), 'package.json'))
@@ -15,6 +15,7 @@ const umdGlobal = _.camelCase(name)
 const plugins = [
   babel({
     ...babelConfig,
+    babelHelpers: 'bundled',
     exclude: 'node_modules/**/*',
   }),
   nodeResolve(),

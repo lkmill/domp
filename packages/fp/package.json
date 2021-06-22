@@ -3,9 +3,12 @@
   "version": "0.2.0",
   "description": "Convert regular dom-packages to auto-curried, iteratee-first and data-last methods",
   "type": "module",
-  "main": "./dist/esm/index.js",
-  "exports": "./dist/esm/index.js",
-  "module": "./dist/esm/index.js",
+  "main": "./dist/index.cjs",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "module": "./dist/index.js",
   "unpkg": "./dist/fp.min.js",
   "repository": {
     "type": "git",

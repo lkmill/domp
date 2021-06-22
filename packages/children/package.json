@@ -3,12 +3,18 @@
   "version": "0.5.0",
   "description": "DOM, HTML",
   "type": "module",
-  "main": "./dist/esm/index.js",
+  "main": "./dist/index.cjs",
   "exports": {
-    ".": "./dist/esm/index.js",
-    "./fp": "./dist/esm/fp.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./fp": {
+      "import": "./dist/fp.js",
+      "require": "./dist/fp.cjs"
+    }
   },
-  "module": "./dist/esm/index.js",
+  "module": "./dist/index.js",
   "unpkg": "./dist/children.min.js",
   "repository": {
     "type": "git",

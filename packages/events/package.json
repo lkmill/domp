@@ -3,14 +3,26 @@
   "version": "0.2.0",
   "description": "DOM, HTML",
   "type": "module",
-  "main": "./dist/esm/index.js",
+  "main": "./dist/index.cjs",
   "exports": {
-    ".": "./dist/esm/index.js",
-    "./off": "./dist/esm/off.js",
-    "./on": "./dist/esm/on.js",
-    "./once": "./dist/esm/once.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./off": {
+      "import": "./dist/off.js",
+      "require": "./dist/off.cjs"
+    },
+    "./on": {
+      "import": "./dist/on.js",
+      "require": "./dist/on.cjs"
+    },
+    "./once": {
+      "import": "./dist/once.js",
+      "require": "./dist/once.cjs"
+    }
   },
-  "module": "./dist/esm/index.js",
+  "module": "./dist/index.js",
   "unpkg": "./dist/events.min.js",
   "repository": {
     "type": "git",

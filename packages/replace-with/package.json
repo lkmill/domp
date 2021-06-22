@@ -3,9 +3,12 @@
   "version": "0.4.0",
   "description": "DOM, HTML",
   "type": "module",
-  "main": "./dist/esm/index.js",
-  "exports": "./dist/esm/index.js",
-  "module": "./dist/esm/index.js",
+  "main": "./dist/index.cjs",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "module": "./dist/index.js",
   "unpkg": "./dist/replace-with.min.js",
   "repository": {
     "type": "git",

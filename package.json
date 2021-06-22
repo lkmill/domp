@@ -9,12 +9,13 @@
     "bootstrap": "lerna bootstrap --use-workspaces",
     "clean": "lerna exec -- rimraf dist",
     "lint": "lerna exec --stream -- eslint --ext .js --ext .mjs src",
-    "build": "npm run build:esm && npm run build:umd && npm run build:umd:min",
-    "build:esm": "lerna exec --stream -- BABEL_ENV=esm babel --root-mode upward src --out-dir ./dist/esm --source-maps",
-    "build:umd": "lerna exec --stream -- BABEL_ENV=umd rollup -c ../../rollup.config.mjs",
-    "build:umd:min": "lerna exec --stream -- BABEL_ENV=umd rollup -c ../../rollup.config.minify.mjs",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min",
+    "build:cjs": "lerna exec --stream -- BABEL_ENV=cjs babel --root-mode upward src --out-dir ./dist --source-maps --out-file-extension .cjs",
+    "build:esm": "lerna exec --stream -- babel --root-mode upward src --out-dir ./dist --source-maps",
+    "build:umd": "lerna exec --stream -- rollup -c ../../rollup.config.mjs",
+    "build:umd:min": "lerna exec --stream -- rollup -c ../../rollup.config.minify.mjs",
     "prepublish": "npm run clean && npm run lint && npm run build",
-    "test": "BABEL_ENV=cjs jest"
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.3",
@@ -23,7 +24,8 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "babel-jest": "^27.0.2",
-    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-transform-es2015-modules-simple-commonjs": "^0.3.0",
     "eslint": "^7.27.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",

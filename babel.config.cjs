@@ -1,24 +1,21 @@
 'use strict'
 
 module.exports = {
+  presets: [['@babel/env', { modules: false, shippedProposals: true }]],
+
   env: {
     cjs: {
-      presets: [
-        [ '@babel/env', { modules: 'cjs', shippedProposals: true } ],
-      ],
       plugins: [
-        'add-module-exports',
+        'babel-plugin-transform-es2015-modules-simple-commonjs',
+        [
+          'module-resolver',
+          {
+            resolvePath(sourcePath, currentFile, opts) {
+              return sourcePath.endsWith('.js') ? sourcePath.slice(0, -2) + 'cjs' : sourcePath
+            },
+          },
+        ],
       ],
-    },
-
-    esm: {
-      presets: [
-        [ '@babel/env', { modules: false, shippedProposals: true } ],
-      ],
-    },
-
-    umd: {
-      presets: [[ '@babel/env', { modules: false, shippedProposals: true } ]],
     },
   },
 }

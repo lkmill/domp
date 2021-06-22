@@ -7,13 +7,14 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "clean": "lerna exec -- rimraf dist",
-    "lint": "lerna exec --stream -- eslint --ext .js --ext .mjs src",
     "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min",
     "build:cjs": "lerna exec --stream -- BABEL_ENV=cjs babel --root-mode upward src --out-dir ./dist --source-maps --out-file-extension .cjs",
     "build:esm": "lerna exec --stream -- babel --root-mode upward src --out-dir ./dist --source-maps",
     "build:umd": "lerna exec --stream -- rollup -c ../../rollup.config.mjs",
     "build:umd:min": "lerna exec --stream -- rollup -c ../../rollup.config.minify.mjs",
+    "clean": "lerna exec -- rimraf dist",
+    "format": "prettier --write .",
+    "lint": "lerna exec --stream -- eslint --ext .js --ext .mjs src",
     "prepublish": "npm run clean && npm run lint && npm run build",
     "test": "jest"
   },
@@ -27,6 +28,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-transform-es2015-modules-simple-commonjs": "^0.3.0",
     "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
@@ -35,6 +37,7 @@
     "jest": "^27.0.4",
     "lerna": "^4.0.0",
     "lodash": "^4.17.21",
+    "prettier": "^2.3.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.50.6",
     "rollup-plugin-uglify": "^6.0.4"

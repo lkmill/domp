@@ -1,6 +1,6 @@
 import is from '@domp/is'
 
-export default function closest (ref, ufo, stop = document.body) {
+export default function closest(ref, ufo, stop = document.body) {
   if (ufo instanceof NodeList || ufo instanceof HTMLCollection) {
     ufo = Array.from(ufo)
   }

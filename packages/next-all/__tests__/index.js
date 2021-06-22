@@ -19,23 +19,23 @@ const a5 = document.getElementById('a-5')
 test('basic test', () => {
   let result = nextAll(a1)
 
-  expect(result).toEqual([ a2, a3, a4, a5 ])
+  expect(result).toEqual([a2, a3, a4, a5])
 
   result = nextAll(a2, '.a')
 
-  expect(result).toEqual([ a3, a4, a5 ])
+  expect(result).toEqual([a3, a4, a5])
 
   result = nextAll(a2, '.a-4')
 
-  expect(result).toEqual([ a4 ])
+  expect(result).toEqual([a4])
 
   result = nextAll(a2, '#a-5')
 
-  expect(result).toEqual([ a5 ])
+  expect(result).toEqual([a5])
 
   result = nextAll(a2, '#a-5')
 
-  expect(result).toEqual([ a5 ])
+  expect(result).toEqual([a5])
 
   result = nextAll(a2, '#x')
 

@@ -1,5 +1,5 @@
 // TODO implement insertBefore(nodeList, nodeList)
-export default function insertBefore (element, reference) {
+export default function insertBefore(element, reference) {
   if (reference.parentNode) {
     if (element instanceof Node) {
       reference.parentNode.insertBefore(element, reference)

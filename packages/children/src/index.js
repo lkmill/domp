@@ -6,7 +6,7 @@ import is from '@domp/is'
  * Criteria to test against (see dom-is)
  * @returns {Element[]} Array of all (matching) children
  */
-export default function domChildren (element, criteria) {
+export default function domChildren(element, criteria) {
   if (!element || !element.children) return []
 
   let children = Array.from(element.children)

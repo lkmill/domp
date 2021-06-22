@@ -1,6 +1,6 @@
 import is from '@domp/is'
 
-export default function nextAll (element, selector) {
+export default function nextAll(element, selector) {
   const siblings = Array.from(element.parentNode.children)
 
   let next = siblings.slice(siblings.indexOf(element) + 1)

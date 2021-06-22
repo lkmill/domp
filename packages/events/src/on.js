@@ -1,8 +1,8 @@
 import $$ from '@domp/select-all'
 import is from '@domp/is'
 
-function addEvent (element, event, selector, data, listener) {
-  function wrappedListener (e) {
+function addEvent(element, event, selector, data, listener) {
+  function wrappedListener(e) {
     if (!selector || (e.target !== element && is(e.target, selector))) {
       if (data) {
         e.data = data
@@ -26,7 +26,7 @@ function addEvent (element, event, selector, data, listener) {
   element.addEventListener(event, wrappedListener, false)
 }
 
-export default function on (elements, eventString, selector, data, listener) {
+export default function on(elements, eventString, selector, data, listener) {
   if (typeof selector === 'function') {
     listener = selector
     data = null

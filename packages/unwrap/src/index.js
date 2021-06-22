@@ -1,4 +1,4 @@
-export default function unwrap (element) {
+export default function unwrap(element) {
   const parent = element.parentNode
 
   while (element.firstChild) {

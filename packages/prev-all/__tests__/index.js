@@ -19,19 +19,19 @@ const a5 = document.getElementById('a-5')
 test('basic test', () => {
   let result = prevAll(a5)
 
-  expect(result).toEqual([ a1, a2, a3, a4 ])
+  expect(result).toEqual([a1, a2, a3, a4])
 
   result = prevAll(a4, '.a')
 
-  expect(result).toEqual([ a1, a2, a3 ])
+  expect(result).toEqual([a1, a2, a3])
 
   result = prevAll(a4, '.a-2')
 
-  expect(result).toEqual([ a2 ])
+  expect(result).toEqual([a2])
 
   result = prevAll(a5, '#a-2')
 
-  expect(result).toEqual([ a2 ])
+  expect(result).toEqual([a2])
 
   result = prevAll(a2, '#x')
 

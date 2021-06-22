@@ -1,13 +1,13 @@
 import $$ from '@domp/select-all'
 
-function removeListeners (element, events, listener) {
+function removeListeners(element, events, listener) {
   if (!element.__events) {
     return
   }
 
   events = events || Object.keys(element.__events)
 
-  events.forEach(event => {
+  events.forEach((event) => {
     const map = element.__events[event]
 
     if (!map) {
@@ -36,7 +36,7 @@ function removeListeners (element, events, listener) {
   })
 }
 
-export default function off (elements, eventString, listener) {
+export default function off(elements, eventString, listener) {
   if (typeof eventString === 'function') {
     listener = eventString
 
@@ -45,5 +45,5 @@ export default function off (elements, eventString, listener) {
 
   const events = eventString && eventString.split(' ')
 
-  $$(elements).forEach(element => removeListeners(element, events, listener))
+  $$(elements).forEach((element) => removeListeners(element, events, listener))
 }

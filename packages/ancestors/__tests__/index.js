@@ -21,7 +21,7 @@ const a4 = document.getElementById('a-4')
 test('finds ancestors by id', () => {
   let find = ancestors(a4, '#a-1')
 
-  expect(find).toEqual([ a1 ])
+  expect(find).toEqual([a1])
 
   find = ancestors(a4, '#b-1')
 
@@ -31,11 +31,11 @@ test('finds ancestors by id', () => {
 test('finds ancestors by class', () => {
   let find = ancestors(a4, '.a-2')
 
-  expect(find).toEqual([ a2 ])
+  expect(find).toEqual([a2])
 
   find = ancestors(a4, '.a')
 
-  expect(find).toEqual([ a3, a2, a1 ])
+  expect(find).toEqual([a3, a2, a1])
 
   find = ancestors(a4, '.b')
 
@@ -45,13 +45,13 @@ test('finds ancestors by class', () => {
 test('find ancestors by tag', () => {
   const find = ancestors(a4, 'div')
 
-  expect(find).toEqual([ a3, a2, a1 ])
+  expect(find).toEqual([a3, a2, a1])
 })
 
 test('fp: all', () => {
   let find = ancestorsFp('#a-1')(a4)
 
-  expect(find).toEqual([ a1 ])
+  expect(find).toEqual([a1])
 
   find = ancestorsFp('#b-1')(a4)
 
@@ -59,11 +59,11 @@ test('fp: all', () => {
 
   find = ancestorsFp('.a-2')(a4)
 
-  expect(find).toEqual([ a2 ])
+  expect(find).toEqual([a2])
 
   find = ancestorsFp('.a')(a4)
 
-  expect(find).toEqual([ a3, a2, a1 ])
+  expect(find).toEqual([a3, a2, a1])
 
   find = ancestorsFp('.b')(a4)
 
@@ -71,5 +71,5 @@ test('fp: all', () => {
 
   find = ancestorsFp('div')(a4)
 
-  expect(find).toEqual([ a3, a2, a1 ])
+  expect(find).toEqual([a3, a2, a1])
 })

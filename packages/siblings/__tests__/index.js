@@ -19,19 +19,19 @@ const a5 = document.getElementById('a-5')
 test('basic test', () => {
   let result = siblings(a5)
 
-  expect(result).toEqual([ a1, a2, a3, a4 ])
+  expect(result).toEqual([a1, a2, a3, a4])
 
   result = siblings(a4, '.a')
 
-  expect(result).toEqual([ a1, a2, a3, a5 ])
+  expect(result).toEqual([a1, a2, a3, a5])
 
   result = siblings(a4, '.a-2')
 
-  expect(result).toEqual([ a2 ])
+  expect(result).toEqual([a2])
 
   result = siblings(a5, '#a-2')
 
-  expect(result).toEqual([ a2 ])
+  expect(result).toEqual([a2])
 
   result = siblings(a2, '#x')
 

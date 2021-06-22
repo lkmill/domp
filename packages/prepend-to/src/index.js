@@ -1,4 +1,4 @@
-export default function prependTo (element, reference) {
+export default function prependTo(element, reference) {
   if (element instanceof Node) {
     if (reference.firstChild) {
       reference.insertBefore(element, reference.firstChild)

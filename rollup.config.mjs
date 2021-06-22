@@ -18,16 +18,18 @@ const plugins = [
   nodeResolve(),
 ]
 
-const configs = [{
-  plugins,
-  input: 'src/index.js',
-  output: {
-    file: `dist/${name}.js`,
-    format: 'umd',
-    name: `$${umdGlobal}`,
-    sourcemap: true,
+const configs = [
+  {
+    plugins,
+    input: 'src/index.js',
+    output: {
+      file: `dist/${name}.js`,
+      format: 'umd',
+      name: `$${umdGlobal}`,
+      sourcemap: true,
+    },
   },
-}]
+]
 
 if (fs.existsSync(path.join(process.cwd(), 'src/fp.js'))) {
   configs.push({

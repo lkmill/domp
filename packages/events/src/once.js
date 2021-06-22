@@ -1,7 +1,7 @@
 import off from './off'
 import on from './on'
 
-export default function once (elements, eventString, selector, data, listener) {
+export default function once(elements, eventString, selector, data, listener) {
   if (typeof selector === 'function') {
     listener = selector
     data = null
@@ -17,7 +17,7 @@ export default function once (elements, eventString, selector, data, listener) {
     }
   }
 
-  function wrappedListener (e) {
+  function wrappedListener(e) {
     off(elements, eventString, wrappedListener)
 
     listener.call(this, e)

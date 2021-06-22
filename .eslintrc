@@ -1,13 +1,13 @@
 {
   "root": true,
 
-  "extends": [ "standard" ],
+  "extends": ["standard", "prettier"],
 
   "env": {
-      "browser": true
+    "browser": true
   },
 
   "rules": {
-    "comma-dangle": [ 2, "always-multiline" ]
+    "comma-dangle": [2, "always-multiline"]
   }
 }

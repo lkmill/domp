@@ -1,4 +1,4 @@
-export default function offset (el) {
+export default function offset(el) {
   const result = {
     top: 0,
     left: 0,

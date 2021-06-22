@@ -1,5 +1,5 @@
-export default function curry (fnc) {
-  return function curried (...args) {
+export default function curry(fnc) {
+  return function curried(...args) {
     if (args.length < fnc.length) {
       return curried.bind(null, ...args)
     }

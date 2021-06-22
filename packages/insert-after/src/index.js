@@ -1,5 +1,5 @@
 // TODO implement insertAfter(nodeList, nodeList)
-export default function insertAfter (element, reference) {
+export default function insertAfter(element, reference) {
   if (reference.parentNode) {
     const next = reference.nextSibling
 
@@ -11,13 +11,15 @@ export default function insertAfter (element, reference) {
         element = Array.from(element)
       }
 
-      element.forEach(next
-        ? (el) => {
-            reference.parentNode.insertBefore(el, next)
-          }
-        : (el) => {
-            reference.parentNode.appendChild(el)
-          })
+      element.forEach(
+        next
+          ? (el) => {
+              reference.parentNode.insertBefore(el, next)
+            }
+          : (el) => {
+              reference.parentNode.appendChild(el)
+            },
+      )
     }
   }
 }

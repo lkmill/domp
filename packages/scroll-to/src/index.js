@@ -1,4 +1,4 @@
-export default function scrollTo (coordX, coordY, duration) {
+export default function scrollTo(coordX, coordY, duration) {
   const startOffset = window.pageYOffset
 
   const difference = coordY - startOffset

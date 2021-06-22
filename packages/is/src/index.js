@@ -26,7 +26,7 @@ if (!Element.prototype.matches) {
  * @param {string|number|Node|Node[]|NodeList|HTMLCollection} criteria - Criteria to test against
  * @returns {boolean} - Whether Node passes criteria
  */
-export default function is (node, criteria) {
+export default function is(node, criteria) {
   if (!criteria) {
     return false
   } else if (typeof criteria === 'string') {

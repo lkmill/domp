@@ -1,6 +1,6 @@
 import is from '@domp/is'
 
-export default function ancestors (ref, criteria, stop = document.body) {
+export default function ancestors(ref, criteria, stop = document.body) {
   if (criteria instanceof NodeList || criteria instanceof HTMLCollection) {
     criteria = Array.from(criteria)
   }

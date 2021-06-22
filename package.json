@@ -15,8 +15,13 @@
     "clean": "lerna exec -- rimraf dist",
     "format": "prettier --write .",
     "lint": "lerna exec --stream -- eslint --ext .js --ext .mjs src",
+    "prepare": "husky install",
     "prepublish": "npm run clean && npm run lint && npm run build",
     "test": "jest"
+  },
+  "lint-staged": {
+    "*.{cjs,js,mjs,ts}": "eslint --cache --fix",
+    "*.{cjs,js,json,mjs,ts}": "prettier --write"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.3",
@@ -34,8 +39,10 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
+    "husky": "^6.0.0",
     "jest": "^27.0.4",
     "lerna": "^4.0.0",
+    "lint-staged": "^11.0.0",
     "lodash": "^4.17.21",
     "prettier": "^2.3.1",
     "rimraf": "^3.0.2",

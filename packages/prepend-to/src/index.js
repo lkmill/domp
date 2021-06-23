@@ -1,3 +1,8 @@
+/**
+ * @param {Node | NodeList | HTMLCollection | Node[]} element
+ * @param {Node} reference
+ * @returns {void}
+ */
 export default function prependTo(element, reference) {
   if (element instanceof Node) {
     if (reference.firstChild) {

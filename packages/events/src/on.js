@@ -1,6 +1,14 @@
 import $$ from '@domp/select-all'
 import is from '@domp/is'
 
+/**
+ * @param {EventTarget} element
+ * @param {string} event - a single event type
+ * @param {string | null} selector
+ * @param {*} data
+ * @param {EventListener | Function} listener
+ * @returns {void}
+ */
 function addEvent(element, event, selector, data, listener) {
   function wrappedListener(e) {
     if (!selector || (e.target !== element && is(e.target, selector))) {
@@ -26,7 +34,15 @@ function addEvent(element, event, selector, data, listener) {
   element.addEventListener(event, wrappedListener, false)
 }
 
-export default function on(elements, eventString, selector, data, listener) {
+/**
+ * @param {string | EventTarget | EventTarget[] | NodeListOf<EventTarget> | HTMLCollectionOf<EventTarget>} elements
+ * @param {string} event - one or more space-separated event types
+ * @param {string | null} selector
+ * @param {*} data
+ * @param {EventListener | Function} listener
+ * @returns {void}
+ */
+export default function on(elements, event, selector, data, listener) {
   if (typeof selector === 'function') {
     listener = selector
     data = null
@@ -44,7 +60,7 @@ export default function on(elements, eventString, selector, data, listener) {
     throw new Error('You have to provide a listener function')
   }
 
-  const events = eventString.split(' ')
+  const events = event.split(' ')
 
   elements = $$(elements)
 

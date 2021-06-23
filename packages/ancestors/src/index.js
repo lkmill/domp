@@ -1,5 +1,11 @@
 import is from '@domp/is'
 
+/**
+ * @param {ChildNode} ref
+ * @param {string | number | Node | Node[] | NodeList | HTMLCollection} [criteria]
+ * @param {string | number | Node | Node[] | NodeList | HTMLCollection} [stop=document.body]
+ * @returns {ParentNode[]} matching ancestors
+ */
 export default function ancestors(ref, criteria, stop = document.body) {
   if (criteria instanceof NodeList || criteria instanceof HTMLCollection) {
     criteria = Array.from(criteria)

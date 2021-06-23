@@ -1,6 +1,10 @@
 import createOne from '@domp/create'
 
-export default function find(ufo, context) {
+/**
+ * @param {string | Node | Node[] | NodeList | HTMLCollection | Function}
+ * @returns {Node | null}
+ */
+export default function select(ufo, context) {
   if (typeof ufo === 'string') {
     // if it seems to be HTML, create an element
     if (/^\s*</.test(ufo)) {
@@ -8,7 +12,7 @@ export default function find(ufo, context) {
     }
 
     if (context) {
-      return find(context).querySelector(ufo)
+      return select(context).querySelector(ufo)
     }
 
     return document.querySelector(ufo)

@@ -16,6 +16,14 @@
   },
   "module": "./dist/index.js",
   "unpkg": "./dist/children.min.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "fp": [
+        "./dist/fp.d.ts"
+      ]
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lohfu/domp.git"

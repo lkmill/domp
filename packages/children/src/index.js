@@ -2,11 +2,10 @@ import is from '@domp/is'
 
 /**
  * @param {Element} element - element to get children of
- * @param {string|number|Node|Node[]|NodeList|HTMLCollection} criteria -
- * Criteria to test against (see dom-is)
- * @returns {Element[]} Array of all (matching) children
+ * @param {string | number | Node | Node[] | NodeList | HTMLCollection} criteria - criteria to test against (see @domp/is)
+ * @returns {Element[]} - array of all (matching) children
  */
-export default function domChildren(element, criteria) {
+export default function children(element, criteria) {
   if (!element || !element.children) return []
 
   let children = Array.from(element.children)

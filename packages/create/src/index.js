@@ -1,3 +1,7 @@
+/**
+ * @param {string} htmlString
+ * @returns {Element}
+ */
 export default function create(htmlString) {
   const container = document.createElement('div')
 

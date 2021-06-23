@@ -23,7 +23,7 @@ if (!Element.prototype.matches) {
 
 /**
  * @param {Node} node - Node to test
- * @param {string|number|Node|Node[]|NodeList|HTMLCollection} criteria - Criteria to test against
+ * @param {string | number | Node | Node[] | NodeList | HTMLCollection} criteria - Criteria to test against
  * @returns {boolean} - Whether Node passes criteria
  */
 export default function is(node, criteria) {

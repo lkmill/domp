@@ -24,6 +24,17 @@
   },
   "module": "./dist/index.js",
   "unpkg": "./dist/events.min.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "dist/index.d.ts": [
+        "./dist/index.d.ts"
+      ],
+      "*": [
+        "./dist/*"
+      ]
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lohfu/domp.git"

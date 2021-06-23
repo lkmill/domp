@@ -1,4 +1,10 @@
-export default function scrollTo(coordX, coordY, duration) {
+/**
+ * @param {number} coordX - the x coordinate to screw to
+ * @param {number} coordY - offset in y-axis to scroll to
+ * @param {number} [duration=0] - duration of scroll animation
+ * @returns {void}
+ */
+export default function scrollTo(coordX, coordY, duration = 0) {
   const startOffset = window.pageYOffset
 
   const difference = coordY - startOffset

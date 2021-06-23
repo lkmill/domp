@@ -1,12 +1,17 @@
 import is from '@domp/is'
 
-export default function prevAll(element, selector) {
+/**
+ * @param {ChildNode} element
+ * @param {string | number | Node | Node[] | NodeList | HTMLCollection} [criteria]
+ * @returns {ChildNode[]} all matching previous siblings
+ */
+export default function prevAll(element, criteria) {
   const siblings = Array.from(element.parentNode.children)
 
   let prev = siblings.slice(0, siblings.indexOf(element))
 
-  if (selector) {
-    prev = prev.filter((el) => is(el, selector))
+  if (criteria) {
+    prev = prev.filter((el) => is(el, criteria))
   }
 
   return prev

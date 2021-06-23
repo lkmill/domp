@@ -1,7 +1,15 @@
 import off from './off'
 import on from './on'
 
-export default function once(elements, eventString, selector, data, listener) {
+/**
+ * @param {string | EventTarget | EventTarget[] | NodeListOf<EventTarget> | HTMLCollectionOf<EventTarget>} elements
+ * @param {string} event - one or more space-separated event types
+ * @param {string | null} selector
+ * @param {*} data
+ * @param {EventListener | Function} listener
+ * @returns {void}
+ */
+export default function once(elements, event, selector, data, listener) {
   if (typeof selector === 'function') {
     listener = selector
     data = null
@@ -18,10 +26,10 @@ export default function once(elements, eventString, selector, data, listener) {
   }
 
   function wrappedListener(e) {
-    off(elements, eventString, wrappedListener)
+    off(elements, event, wrappedListener)
 
     listener.call(this, e)
   }
 
-  on(elements, eventString, selector, data, wrappedListener)
+  on(elements, event, selector, data, wrappedListener)
 }

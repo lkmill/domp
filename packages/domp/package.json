@@ -10,6 +10,14 @@
   "export": "./dist/esm/index.js",
   "module": "./dist/index.js",
   "unpkg": "./dist/domp.min.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "fp": [
+        "./dist/fp.d.ts"
+      ]
+    }
+  },
   "files": [
     "lib"
   ],

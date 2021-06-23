@@ -1,4 +1,8 @@
-// TODO implement insertAfter(nodeList, nodeList)
+/**
+ * @param {Node | NodeList | HTMLCollection | Node[]} element
+ * @param {Node} reference
+ * @returns {void}
+ */
 export default function insertAfter(element, reference) {
   if (reference.parentNode) {
     const next = reference.nextSibling

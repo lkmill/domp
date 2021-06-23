@@ -1,6 +1,10 @@
 import createMany from '@domp/create-many'
 
-export default function selectMany(ufo, context) {
+/**
+ * @param {string | Node | Node[] | NodeList | HTMLCollection}
+ * @returns {Node[] | null}
+ */
+export default function selectAll(ufo, context) {
   if (typeof ufo === 'string') {
     // if it seems to be HTML, create an elements
     if (/^\s*</.test(ufo)) {
@@ -8,7 +12,7 @@ export default function selectMany(ufo, context) {
     }
 
     if (context) {
-      return selectMany(context).reduce(
+      return selectAll(context).reduce(
         (result, element) => result.concat(Array.from(element.querySelectorAll(ufo))),
         [],
       )

@@ -1,3 +1,7 @@
+/**
+ * @param {Function} fnc
+ * @returns {Function}
+ */
 export default function curry(fnc) {
   return function curried(...args) {
     if (args.length < fnc.length) {

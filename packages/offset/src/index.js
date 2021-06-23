@@ -1,3 +1,7 @@
+/**
+ * @param {HTMLElement} element
+ * @returns {{ left: number, top: number }} - coordinates
+ */
 export default function offset(el) {
   const result = {
     top: 0,

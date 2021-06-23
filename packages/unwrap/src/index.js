@@ -1,3 +1,7 @@
+/**
+ * @param {ChildNode} element
+ * @returns {void}
+ */
 export default function unwrap(element) {
   const parent = element.parentNode
 

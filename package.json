@@ -7,11 +7,12 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:umd:min && npm run build:types",
     "build:cjs": "lerna exec --stream -- BABEL_ENV=cjs babel --root-mode upward src --out-dir ./dist --source-maps --out-file-extension .cjs",
     "build:esm": "lerna exec --stream -- babel --root-mode upward src --out-dir ./dist --source-maps",
     "build:umd": "lerna exec --stream -- rollup -c ../../rollup.config.mjs",
     "build:umd:min": "lerna exec --stream -- rollup -c ../../rollup.config.minify.mjs",
+    "build:types": "lerna exec --stream -- tsc --allowJs -d --emitDeclarationOnly --outDir dist src/*.js",
     "clean": "lerna exec -- rimraf dist",
     "format": "prettier --write .",
     "lint": "lerna exec --stream -- eslint --ext .js --ext .mjs src",
@@ -47,6 +48,7 @@
     "prettier": "^2.3.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.50.6",
-    "rollup-plugin-uglify": "^6.0.4"
+    "rollup-plugin-uglify": "^6.0.4",
+    "typescript": "^4.3.4"
   }
 }

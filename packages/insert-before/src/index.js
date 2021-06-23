@@ -1,4 +1,8 @@
-// TODO implement insertBefore(nodeList, nodeList)
+/**
+ * @param {Node | NodeList | HTMLCollection | Node[]} element
+ * @param {Node} reference
+ * @returns {void}
+ */
 export default function insertBefore(element, reference) {
   if (reference.parentNode) {
     if (element instanceof Node) {

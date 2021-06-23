@@ -10,6 +10,7 @@
   },
   "module": "./dist/index.js",
   "unpkg": "./dist/select.min.js",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lohfu/domp.git"

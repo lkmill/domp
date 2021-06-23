@@ -1,9 +1,14 @@
 import is from '@domp/is'
 
-export default function next(element, selector) {
+/**
+ * @param {ChildNode} element
+ * @param {string | number | Node | Node[] | NodeList | HTMLCollection} [criteria]
+ * @returns {ChildNode} next element if it matches criteria
+ */
+export default function next(element, criteria) {
   let nextElement = element.nextElementSibling || null
 
-  if (nextElement && selector && !is(nextElement, selector)) {
+  if (nextElement && criteria && !is(nextElement, criteria)) {
     nextElement = null
   }
 

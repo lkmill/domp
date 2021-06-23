@@ -1,3 +1,7 @@
+/**
+ * @param {ParentNode} element
+ * @returns {void}
+ */
 export default function empty(element) {
   // TODO test for speed, maybe this.childNodes = null/undefined would work better.
   while (element.firstChild) {

@@ -1,5 +1,11 @@
 import $$ from '@domp/select-all'
 
+/**
+ * @param {EventTarget} element
+ * @param {string[]} [events] - an array of single event types
+ * @param {EventListener | Function} [listener]
+ * @returns {void}
+ */
 function removeListeners(element, events, listener) {
   if (!element.__events) {
     return
@@ -36,14 +42,20 @@ function removeListeners(element, events, listener) {
   })
 }
 
-export default function off(elements, eventString, listener) {
-  if (typeof eventString === 'function') {
-    listener = eventString
+/**
+ * @param {string | EventTarget | EventTarget[] | NodeListOf<EventTarget> | HTMLCollectionOf<EventTarget>} elements
+ * @param {string} [event] - one or more space-separated event types
+ * @param {EventListener | Function} [listener]
+ * @returns {void}
+ */
+export default function off(elements, event, listener) {
+  if (typeof event === 'function') {
+    listener = event
 
-    eventString = null
+    event = null
   }
 
-  const events = eventString && eventString.split(' ')
+  const events = event && event.split(' ')
 
   $$(elements).forEach((element) => removeListeners(element, events, listener))
 }

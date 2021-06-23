@@ -8,11 +8,7 @@ import is from '@domp/is'
 export default function children(element, criteria) {
   if (!element || !element.children) return []
 
-  let children = Array.from(element.children)
+  const children = Array.from(element.children)
 
-  if (criteria) {
-    children = children.filter((child) => is(child, criteria))
-  }
-
-  return children
+  return criteria ? children.filter((child) => is(child, criteria)) : children
 }

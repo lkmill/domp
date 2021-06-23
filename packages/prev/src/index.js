@@ -6,11 +6,7 @@ import is from '@domp/is'
  * @returns {ChildNode} the previous sibling if it matches criteria
  */
 export default function prev(element, criteria) {
-  let prevElement = element.previousElementSibling || null
+  const prevElement = element.previousElementSibling || null
 
-  if (prevElement && criteria && !is(prevElement, criteria)) {
-    prevElement = null
-  }
-
-  return prevElement
+  return prevElement && criteria && !is(prevElement, criteria) ? null : prevElement
 }

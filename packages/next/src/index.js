@@ -6,11 +6,7 @@ import is from '@domp/is'
  * @returns {ChildNode} next element if it matches criteria
  */
 export default function next(element, criteria) {
-  let nextElement = element.nextElementSibling || null
+  const nextElement = element.nextElementSibling || null
 
-  if (nextElement && criteria && !is(nextElement, criteria)) {
-    nextElement = null
-  }
-
-  return nextElement
+  return nextElement && criteria && !is(nextElement, criteria) ? null : nextElement
 }

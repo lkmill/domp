@@ -8,11 +8,7 @@ import is from '@domp/is'
 export default function prevAll(element, criteria) {
   const siblings = Array.from(element.parentNode.children)
 
-  let prev = siblings.slice(0, siblings.indexOf(element))
+  const prev = siblings.slice(0, siblings.indexOf(element))
 
-  if (criteria) {
-    prev = prev.filter((el) => is(el, criteria))
-  }
-
-  return prev
+  return criteria ? prev.filter((el) => is(el, criteria)) : prev
 }

@@ -8,11 +8,7 @@ import is from '@domp/is'
 export default function nextAll(element, criteria) {
   const siblings = Array.from(element.parentNode.children)
 
-  let next = siblings.slice(siblings.indexOf(element) + 1)
+  const next = siblings.slice(siblings.indexOf(element) + 1)
 
-  if (criteria) {
-    next = next.filter((el) => is(el, criteria))
-  }
-
-  return next
+  return criteria ? next.filter((el) => is(el, criteria)) : next
 }

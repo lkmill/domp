@@ -1,6 +1,8 @@
 import $$ from '@domp/select-all'
 import is from '@domp/is'
 
+const SYMBOL = typeof Symbol !== 'undefined' && Symbol.for ? Symbol.for('__domp_events') : '__domp_events'
+
 /**
  * @param {EventTarget} element
  * @param {string} event - a single event type
@@ -20,16 +22,9 @@ function addEvent(element, event, selector, data, listener) {
     }
   }
 
-  if (!element.__events) {
-    Object.defineProperty(element, '__events', {
-      enumerable: false,
-      value: {},
-    })
-  }
+  const events = element[SYMBOL] || (element[SYMBOL] = {})
 
-  const map = element.__events[event] || (element.__events[event] = new Map())
-
-  map.set(listener, wrappedListener)
+  ;(events[event] || (events[event] = new Map())).set(listener, wrappedListener)
 
   element.addEventListener(event, wrappedListener, false)
 }

@@ -1,5 +1,7 @@
 import $$ from '@domp/select-all'
 
+const SYMBOL = typeof Symbol !== 'undefined' && Symbol.for ? Symbol.for('__domp_events') : '__domp_events'
+
 /**
  * @param {EventTarget} element
  * @param {string[]} [events] - an array of single event types
@@ -7,14 +9,14 @@ import $$ from '@domp/select-all'
  * @returns {void}
  */
 function removeListeners(element, events, listener) {
-  if (!element.__events) {
+  if (!element[SYMBOL]) {
     return
   }
 
-  events = events || Object.keys(element.__events)
+  events = events || Object.keys(element[SYMBOL])
 
   events.forEach((event) => {
-    const map = element.__events[event]
+    const map = element[SYMBOL][event]
 
     if (!map) {
       return
@@ -27,7 +29,7 @@ function removeListeners(element, events, listener) {
         element.removeEventListener(event, wrappedListener)
 
         if (map.size === 1) {
-          delete element.__events[event]
+          delete element[SYMBOL][event]
         } else {
           map.delete(listener)
         }
@@ -37,7 +39,7 @@ function removeListeners(element, events, listener) {
         element.removeEventListener(event, wrappedListener)
       }
 
-      delete element.__events[event]
+      delete element[SYMBOL][event]
     }
   })
 }

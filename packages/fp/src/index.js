@@ -2,13 +2,13 @@
  * @param {Function} fnc
  * @returns {Function}
  */
-export default function fp(fnc) {
+export default function fp(fnc, arity = fnc.length) {
   function curried(...args) {
-    if (args.length < fnc.length) {
+    if (args.length < arity) {
       return curried.bind(null, ...args)
     }
 
-    return fnc(args[args.length - 1], ...args.slice(0, -1))
+    return fnc(args[arity - 1], ...args.slice(0, arity - 1))
   }
 
   return Object.defineProperty(curried, 'name', { value: fnc.name + 'Fp' })

@@ -1,4 +1,4 @@
-import next from '../src/index'
+import next from '../src/index.js'
 
 const html = `
 <div id='a-1' class='a a-1'></div>

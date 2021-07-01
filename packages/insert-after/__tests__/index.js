@@ -1,4 +1,4 @@
-import insertAfter from '../src/index'
+import insertAfter from '../src/index.js'
 
 const html = `
 <div id='a-1' class='a a-1'>

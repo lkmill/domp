@@ -1,4 +1,4 @@
-import nextAll from '../src/index'
+import nextAll from '../src/index.js'
 
 const html = `
 <div id='a-1' class='a a-1'></div>

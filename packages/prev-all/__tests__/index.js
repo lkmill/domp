@@ -1,4 +1,4 @@
-import prevAll from '../src/index'
+import prevAll from '../src/index.js'
 
 const html = `
 <div id='a-1' class='a a-1'></div>

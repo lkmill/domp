@@ -1,4 +1,6 @@
-import fp from '../src/index'
+import { jest } from '@jest/globals'
+
+import fp from '../src/index.js'
 
 test('only calls fnc when enough arguments', () => {
   let fnc = jest.fn((arg1) => arg1)

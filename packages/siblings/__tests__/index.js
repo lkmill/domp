@@ -1,4 +1,4 @@
-import siblings from '../src/index'
+import siblings from '../src/index.js'
 
 const html = `
 <div id='a-1' class='a a-1'></div>

@@ -1,5 +1,7 @@
-import trigger from '../src/index'
-import triggerFp from '../src/fp'
+import { jest } from '@jest/globals'
+
+import trigger from '../src/index.js'
+import triggerFp from '../src/fp.js'
 
 test('basic test', () => {
   const el = document.createElement('div')

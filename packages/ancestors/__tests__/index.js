@@ -1,5 +1,5 @@
-import ancestors from '../src/index'
-import ancestorsFp from '../src/fp'
+import ancestors from '../src/index.js'
+import ancestorsFp from '../src/fp.js'
 
 const html = `
 <div id='a-1' class='a a-1'>

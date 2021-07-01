@@ -18,7 +18,7 @@
     "lint": "eslint --ext js --ext cjs --ext mjs .",
     "prepare": "husky install",
     "prepublishOnly": "npm run clean && npm run lint && npm run build && npm run test",
-    "test": "BABEL_ENV=test jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "lint-staged": {
     "*.{cjs,js,mjs,ts}": "eslint --cache --fix",

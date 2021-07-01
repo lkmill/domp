@@ -1,4 +1,6 @@
-import on from '../src/on'
+import { jest } from '@jest/globals'
+
+import on from '../src/on.js'
 import trigger from '@domp/trigger'
 
 const html = `

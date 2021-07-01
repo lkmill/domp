@@ -1,5 +1,5 @@
-import closest from '../src/index'
-import closestFp from '../src/fp'
+import closest from '../src/index.js'
+import closestFp from '../src/fp.js'
 
 const html = `
 <div id='a-1' class='a a-1'>

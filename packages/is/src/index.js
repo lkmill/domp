@@ -1,24 +1,7 @@
-// polyfill is modified version of
-// https://developer.mozilla.org/en-US/docs/Web/API/Element/matches#Polyfill
-// (lifted 2017-05-15)
 if (!Element.prototype.matches) {
   Element.prototype.matches =
     Element.prototype.matchesSelector ||
-    Element.prototype.mozMatchesSelector ||
-    Element.prototype.msMatchesSelector ||
-    Element.prototype.oMatchesSelector ||
-    Element.prototype.webkitMatchesSelector ||
-    function (s) {
-      const matches = (this.parentNode || this.document || this.ownerDocument).querySelectorAll(s)
-
-      for (let i = 0; i < matches.length; i++) {
-        if (matches[i] === this) {
-          return true
-        }
-      }
-
-      return false
-    }
+    ['moz', 'ms', 'o', 'webkit'].reduce((fnc, vendor) => fnc || Element.prototype[vendor + 'MatchesSelector'], null)
 }
 
 /**

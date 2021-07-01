@@ -9,5 +9,14 @@
 
   "rules": {
     "comma-dangle": [2, "always-multiline"]
-  }
+  },
+
+  "overrides": [
+    {
+      "files": ["**/__tests__/**/*"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }

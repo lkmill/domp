@@ -15,7 +15,7 @@
     "build:types": "lerna exec --stream -- tsc --allowJs -d --emitDeclarationOnly --outDir dist src/*.js",
     "clean": "lerna exec -- rimraf dist",
     "format": "prettier --write .",
-    "lint": "lerna exec --stream -- eslint --ext .js --ext .mjs src",
+    "lint": "eslint --ext js --ext cjs --ext mjs .",
     "prepare": "husky install",
     "prepublishOnly": "npm run clean && npm run lint && npm run build && npm run test",
     "test": "BABEL_ENV=test jest"

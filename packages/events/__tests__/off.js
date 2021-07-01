@@ -16,7 +16,6 @@ document.body.innerHTML = html
 
 test('basic test', () => {
   const a1 = document.getElementById('a-1')
-  const a4 = document.getElementById('a-4')
 
   const fn1 = jest.fn()
   const fn2 = jest.fn()

@@ -1,5 +1,4 @@
 import on from '../src/on'
-import off from '../src/off'
 import trigger from '@domp/trigger'
 
 const html = `
@@ -20,8 +19,6 @@ test('basic test', () => {
 
   const fn1 = jest.fn()
   const fn2 = jest.fn()
-  const fn3 = jest.fn()
-  const fn4 = jest.fn()
 
   on(a1, 'click', fn1)
 

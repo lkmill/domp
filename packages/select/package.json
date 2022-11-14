@@ -1,6 +1,6 @@
 {
   "name": "@domp/select",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "DOM, HTML",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -26,6 +26,6 @@
   },
   "homepage": "https://github.com/lohfu/domp/tree/master/packages/select/README.md",
   "dependencies": {
-    "@domp/create": "^0.4.0"
+    "@domp/create": "^0.5.0"
   }
 }

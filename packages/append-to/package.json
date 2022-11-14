@@ -1,6 +1,6 @@
 {
   "name": "@domp/append-to",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "DOM, HTML",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -39,6 +39,6 @@
   },
   "homepage": "https://github.com/lohfu/domp/tree/master/packages/append-to/README.md",
   "dependencies": {
-    "@domp/fp": "^0.2.0"
+    "@domp/fp": "^0.3.0"
   }
 }

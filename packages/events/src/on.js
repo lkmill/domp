@@ -1,17 +1,29 @@
 import $$ from '@domp/select-all'
 import is from '@domp/is'
-
-const SYMBOL = typeof Symbol !== 'undefined' && Symbol.for ? Symbol.for('__domp_events') : '__domp_events'
+import off from './off.js'
+import matches from './_matches.js'
+import SYMBOL from './_symbol.js'
 
 /**
- * @param {EventTarget} element
+ * @typedef {Object} Options
+ * @property {Object} [data]
+ * @property {string} [selector]
+ * @property {boolean} [capture]
+ * @property {boolean} [once]
+ * @property {boolean} [passive]
+ * @property {AbortSignal} [signal]
+ */
+
+/**
+ * @param {Element} element
  * @param {string} event - a single event type
- * @param {string | null} selector
- * @param {*} data
- * @param {EventListener | Function} listener
+ * @param {EventListener} [options = {}]
+ * @param {Option} [options]
  * @returns {void}
  */
-function addEvent(element, event, selector, data, listener) {
+function addEvent(element, event, listener, options = {}) {
+  const { data, once, selector, signal, ...restOptions } = options
+
   function wrappedListener(e) {
     if (!selector || (e.target !== element && is(e.target, selector))) {
       if (data) {
@@ -19,47 +31,35 @@ function addEvent(element, event, selector, data, listener) {
       }
 
       listener.call(e.target, e)
+
+      if (once) {
+        off(element, event, listener, restOptions)
+      }
     }
   }
 
-  const events = element[SYMBOL] || (element[SYMBOL] = {})
+  if (signal) {
+    signal.onabort = () => off(element, event, listener, restOptions)
+  }
 
-  ;(events[event] || (events[event] = new Map())).set(listener, wrappedListener)
+  const listeners = element[SYMBOL] || (element[SYMBOL] = [])
 
-  element.addEventListener(event, wrappedListener, false)
+  if (!listeners.some((params) => matches(event, listener, options, params))) {
+    listeners.push({ event, listener, wrappedListener, ...options })
+
+    element.addEventListener(event, wrappedListener, restOptions)
+  }
 }
 
 /**
- * @param {string | EventTarget | EventTarget[] | NodeListOf<EventTarget> | HTMLCollectionOf<EventTarget>} elements
+ * @param {string | Element | Element[] | NodeListOf<Element> | HTMLCollectionOf<Element>} elements
  * @param {string} event - one or more space-separated event types
- * @param {string | null} selector
- * @param {*} data
- * @param {EventListener | Function} listener
+ * @param {EventListener} [listener]
+ * @param {Options} [options] - how many times it should be triggered before event listener is removed
  * @returns {void}
  */
-export default function on(elements, event, selector, data, listener) {
-  if (typeof selector === 'function') {
-    listener = selector
-    data = null
-    selector = null
-  } else if (typeof data === 'function') {
-    listener = data
-
-    if (typeof selector === 'string') {
-      data = null
-    } else {
-      data = selector
-      selector = null
-    }
-  } else if (typeof listener !== 'function') {
-    throw new Error('You have to provide a listener function')
-  }
-
-  const events = event.split(' ')
-
-  elements = $$(elements)
-
-  events.forEach((event) => {
-    elements.forEach((element) => addEvent(element, event, selector, data, listener))
+export default function on(elements, event, listener, options) {
+  event.split(' ').forEach((event) => {
+    $$(elements).forEach((element) => addEvent(element, event, listener, options))
   })
 }

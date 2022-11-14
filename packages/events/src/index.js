@@ -1,3 +1,2 @@
-export { default as off } from './off'
-export { default as on } from './on'
-export { default as once } from './once'
+export { default as off } from './off.js'
+export { default as on } from './on.js'

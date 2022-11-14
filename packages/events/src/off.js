@@ -1,63 +1,35 @@
 import $$ from '@domp/select-all'
-
-const SYMBOL = typeof Symbol !== 'undefined' && Symbol.for ? Symbol.for('__domp_events') : '__domp_events'
+import SYMBOL from './_symbol.js'
+import matches from './_matches.js'
 
 /**
- * @param {EventTarget} element
- * @param {string[]} [events] - an array of single event types
- * @param {EventListener | Function} [listener]
+ * @param {string | Element | Element[] | NodeListOf<Element> | HTMLCollectionOf<Element>} elements
+ * @param {string} [event] - one or more space-separated event types
+ * @param {EventListener} [listener]
+ * @param {import('./on').Options} [options]
  * @returns {void}
  */
-function removeListeners(element, events, listener) {
-  if (!element[SYMBOL]) {
-    return
-  }
+export default function off(elements, event, listener, options = {}) {
+  $$(elements).forEach((element) => {
+    const listeners = element[SYMBOL] || []
+    const removeAll = !event && !listener && !Object.keys(options).length
 
-  events = events || Object.keys(element[SYMBOL])
-
-  events.forEach((event) => {
-    const map = element[SYMBOL][event]
-
-    if (!map) {
-      return
-    }
-
-    if (listener) {
-      const wrappedListener = map.get(listener)
-
-      if (wrappedListener) {
-        element.removeEventListener(event, wrappedListener)
-
-        if (map.size === 1) {
-          delete element[SYMBOL][event]
-        } else {
-          map.delete(listener)
+    const filteredListeners = (event ? event.split(' ') : [null]).reduce((listeners, event) => {
+      return listeners.filter((params) => {
+        if (removeAll) {
+          return element.removeEventListener(params.event, params.wrappedListener, params.capture)
+        } else if (matches(event, listener, options, params)) {
+          return element.removeEventListener(event, params.wrappedListener, options)
         }
-      }
-    } else {
-      for (const [, wrappedListener] of map) {
-        element.removeEventListener(event, wrappedListener)
-      }
 
-      delete element[SYMBOL][event]
+        return true
+      })
+    }, listeners)
+
+    if (event && listener && listeners.length === filteredListeners.length) {
+      element.removeEventListener(event, listener, options)
+    } else {
+      element[SYMBOL] = filteredListeners
     }
   })
-}
-
-/**
- * @param {string | EventTarget | EventTarget[] | NodeListOf<EventTarget> | HTMLCollectionOf<EventTarget>} elements
- * @param {string} [event] - one or more space-separated event types
- * @param {EventListener | Function} [listener]
- * @returns {void}
- */
-export default function off(elements, event, listener) {
-  if (typeof event === 'function') {
-    listener = event
-
-    event = null
-  }
-
-  const events = event && event.split(' ')
-
-  $$(elements).forEach((element) => removeListeners(element, events, listener))
 }

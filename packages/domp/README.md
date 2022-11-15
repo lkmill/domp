@@ -5,7 +5,7 @@
 ## Usage
 
 ```
-const { appendTo } from 'domp'
+const { $, appendTo } from 'domp'
 
-// TODO: DEMONSTRATE API
+appendTo($('<h1>Hola</h1>'), $('#element'))
 ```
